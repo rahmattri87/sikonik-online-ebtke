@@ -1,0 +1,11 @@
+# prevent directory listings
+Options -Indexes
+IndexIgnore */*
+ 
+# follow symbolic links
+Options FollowSymlinks
+RewriteEngine on
+RewriteRule ^4dm1n(/.+)?$ backend/web/$1 [L,PT]
+RewriteRule ^(.+)?$ backend/web/$1 [L,PT]
+#RewriteRule ^(.+)?$ frontend/web/$1
+RewriteRule ^gambar(.+)?$ backend/web/assets/ba810b28/img/$1 [L,PT]
